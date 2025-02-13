@@ -1,0 +1,51 @@
+---
+title: "兼容R與Python的RMarkdown範例"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+use_python("/opt/anaconda3/bin/python3")
+# reponse from Sys.which("python3") on Windows
+#use_python("C:\\Users\\Student\\AppData\\Local\\MICROS~1\\WINDOW~1\\python3.exe")
+# 先到Spyder中輸入下兩列指令
+# import sys
+# sys.prefix
+# 查看妳/你的Python3路徑'/opt/anaconda3'，再修改use_python()中的路徑
+# 或是在終端機/CMD中輸入which python查看路徑
+use_python("C:\\Users\\Student\\anaconda3")
+```
+
+## R Markdown輕鬆上手(別忘了上面套件knitr要裝！)
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. (可隨意加說明)
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: (下面是程式碼區塊，注意頭尾)
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example: (也可以繪圖)
+
+```{r pressure}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Python也可以在Rmd中執行
+
+```{python}
+import numpy as np
+X = np.arange(20).reshape((4,5))
+print(X)
+```
+```{python}
+import feather
+```
+(編譯成html時按下工具列中的Knit圖示！Please enjoy it.)
+

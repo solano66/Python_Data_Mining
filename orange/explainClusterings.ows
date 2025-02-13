@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="Datasets" qualified_name="Orange.widgets.data.owdatasets.OWDataSets" project_name="Orange3" version="" title="Datasets" position="(110.0, 96.0)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="Data Table" position="(284.0, 91.0)" />
+		<node id="2" name="Distances" qualified_name="Orange.widgets.unsupervised.owdistances.OWDistances" project_name="Orange3" version="" title="Distances" position="(200.0, 231.0)" />
+		<node id="3" name="Hierarchical Clustering" qualified_name="Orange.widgets.unsupervised.owhierarchicalclustering.OWHierarchicalClustering" project_name="Orange3" version="" title="Hierarchical Clustering" position="(311.0, 184.0)" />
+		<node id="4" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="Data Table (1)" position="(429.0, 127.0)" />
+		<node id="5" name="Box Plot" qualified_name="Orange.widgets.visualize.owboxplot.OWBoxPlot" project_name="Orange3" version="" title="Box Plot" position="(431.0, 237.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="2" source_node_id="2" sink_node_id="3" source_channel="Distances" sink_channel="Distances" enabled="true" />
+		<link id="3" source_node_id="3" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="4" source_node_id="3" sink_node_id="4" source_channel="Selected Data" sink_channel="Data" enabled="true" />
+	</links>
+	<annotations>
+		<text id="0" type="text/plain" rect="(481.0, 39.0, 552.0, 298.0)" font-family=".AppleSystemUIFont" font-size="16">16位學生七科成績的小資料集Course Grades，用來說明如何詮釋集群的結果：
+
+1. Datasets是下載線上內建資料集的元件；
+2. Distances計算樣本間的歐幾里德直線距離；
+3. Hierarchical Clustering使用Ward法計算群間距離，它將使得群內的樣本點儘可能地接近；
+4. 在樹狀圖中手動選擇Phill, George, Maya, Bill, Eve, Lea等同學；
+5. 修改與Data Table元件的數據傳輸連結，Hierarchical Clustering元件將全樣本集傳入Data Table元件，但是新增了Selected欄位；
+6. Box Plot元件選擇Selected欄位作為資料分組變量，並勾選Order by relevance to subgroups；
+7. 在樹狀圖中選擇其他同學群組，挖掘喜歡運動與熱愛自然科學的學生群。
+
+Reference: https://reurl.cc/9RQO7j</text>
+	</annotations>
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'controlAreaVisible': True, 'header_state': b'\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04&gt;\x00\x00\x00\x07\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00d\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00$\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01C\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\\\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00[\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00K\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01q\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00d', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\x18\x00\x00\x00\xd0\x00\x00\x05c\x00\x00\x02\xd9\x00\x00\x01\x18\x00\x00\x00\xe6\x00\x00\x05c\x00\x00\x02\xd9\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x01\x18\x00\x00\x00\xe6\x00\x00\x05c\x00\x00\x02\xd9', 'selected_id': 'core/grades.xlsx', 'splitter_state': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x01,\x00\x00\x00\xc8\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', '__version__': 1}</properties>
+		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x009\x00\x00\x00S\x00\x00\x05\xd4\x00\x00\x03\x1c\x00\x00\x009\x00\x00\x00i\x00\x00\x05\xd4\x00\x00\x03\x1c\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x009\x00\x00\x00i\x00\x00\x05\xd4\x00\x00\x03\x1c', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': True, '__version__': 2}</properties>
+		<properties node_id="2" format="literal">{'autocommit': True, 'axis': 0, 'controlAreaVisible': True, 'metric_idx': 0, 'normalized_dist': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x08\x00\x00\x01\xe1\x00\x00\x02\xef\x00\x00\x02\xe2\x00\x00\x02\x08\x00\x00\x01\xf7\x00\x00\x02\xef\x00\x00\x02\xe2\x00\x00\x00\x00\x00\x00\x00\x00\x06\x90\x00\x00\x02\x08\x00\x00\x01\xf7\x00\x00\x02\xef\x00\x00\x02\xe2', '__version__': 3}</properties>
+		<properties node_id="3" format="pickle">gASV7AMAAAAAAAB9lCiMF2Fubm90YXRpb25faWZfZW51bWVyYXRllIwLRW51bWVyYXRpb26UjBNh
+bm5vdGF0aW9uX2lmX25hbWVzlIwETmFtZZSMCmF1dG9jb21taXSUiIwSY29udHJvbEFyZWFWaXNp
+YmxllIiMCWN1dF9yYXRpb5SMFW51bXB5LmNvcmUubXVsdGlhcnJheZSMBnNjYWxhcpSTlIwFbnVt
+cHmUjAVkdHlwZZSTlIwCZjiUiYiHlFKUKEsDjAE8lE5OTkr/////Sv////9LAHSUYkMIAAAAAADA
+UkCUhpRSlIwRbGFiZWxfb25seV9zdWJzZXSUiYwHbGlua2FnZZRLBIwJbWF4X2RlcHRolEsDjAdw
+cnVuaW5nlEsAjBNzYXZlZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAGgAAAAmwAABQ0AAAQT
+AAABoAAAALEAAAUNAAAEEwAAAAAAAAAABpAAAAGgAAAAsQAABQ0AAAQTlIwQc2VsZWN0aW9uX21l
+dGhvZJRLAIwFdG9wX26USwKMC3pvb21fZmFjdG9ylEsAjAtfX3ZlcnNpb25fX5RLAowUX19zZXNz
+aW9uX3N0YXRlX2RhdGGUfZQojAd2ZXJzaW9ulEsASwBLAIeUjA9zZWxlY3Rpb25fc3RhdGWUXZQo
+Sw9LBksMSwFLBEsLdJRhXZQoSwBLB0c/59bIqPjLc4eUSwNLCkc/6lWKW30/mYeUSwJLCEc/8dj0
+yRfBPYeUSwlLEUc/8421N79ldIeUSwRLC0c/9W/5fi0gPYeUSw1LDkc/+RmWzkztIoeUSwZLDEc/
++n/o5yIk6oeUSw9LFkc//VcjQYhUYoeUSwVLFUc//uC8qZBC/oeUSwFLFEdAAoMV4nhEvoeUSxJL
+E0dAA8m9gUSyqYeUSxhLGkdACA1TuEu49IeUSxdLGUdACShbDYB4vYeUSxBLHEdAEY/hZG/yJoeU
+SxtLHUdAGpzyeAboUoeUZYaUdYwQY29udGV4dF9zZXR0aW5nc5RdlIwVb3Jhbmdld2lkZ2V0LnNl
+dHRpbmdzlIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwKYW5ub3RhdGlvbpSMB1N0dWRl
+bnSUS2eGlIwIY29sb3JfYnmUTkr+////hpRoH0sCdYwKYXR0cmlidXRlc5R9lCiMB0VuZ2xpc2iU
+SwKMBkZyZW5jaJRLAowHSGlzdG9yeZRLAowHQWxnZWJyYZRLAowHQmlvbG9neZRLAowHUGh5c2lj
+c5RLAowIUGh5c2ljYWyUSwJ1jAVtZXRhc5R9lIwHU3R1ZGVudJRLA3N1YmF1Lg==
+</properties>
+		<properties node_id="4" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xce\x00\x00\x00p\x00\x00\x04\xc2\x00\x00\x03^\x00\x00\x01\xce\x00\x00\x00\x86\x00\x00\x04\xc2\x00\x00\x03^\x00\x00\x00\x00\x00\x00\x00\x00\x06\x90\x00\x00\x01\xce\x00\x00\x00\x86\x00\x00\x04\xc2\x00\x00\x03^', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': True, '__version__': 2}</properties>
+		<properties node_id="5" format="pickle">gASV3QIAAAAAAAB9lCiMB2NvbXBhcmWUSwKMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNvcmRlcl9i
+eV9pbXBvcnRhbmNllIiMHG9yZGVyX2dyb3VwaW5nX2J5X2ltcG9ydGFuY2WUiYwTc2F2ZWRXaWRn
+ZXRHZW9tZXRyeZRDQgHZ0MsAAwAAAAADDAAAAT0AAAaPAAADRgAAAwwAAAFTAAAGjwAAA0YAAAAA
+AAAAAAaQAAADDAAAAVMAAAaPAAADRpSMEHNob3dfYW5ub3RhdGlvbnOUiIwLc2hvd19sYWJlbHOU
+iIwNc2lnX3RocmVzaG9sZJRHP6mZmZmZmZqMCnNvcnRfZnJlcXOUiYwIc3RhdHRlc3SUSwCMCXN0
+cmV0Y2hlZJSIjAtfX3ZlcnNpb25fX5RLAYwQY29udGV4dF9zZXR0aW5nc5RdlCiMFW9yYW5nZXdp
+ZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMCWF0dHJpYnV0ZZSM
+BkZyZW5jaJRLZoaUjAlncm91cF92YXKUjAhTZWxlY3RlZJRLZYaUjAlzZWxlY3Rpb26UKUr+////
+hpRoDUsBdYwKYXR0cmlidXRlc5R9lCiMB0VuZ2xpc2iUSwKMBkZyZW5jaJRLAowHSGlzdG9yeZRL
+AowHQWxnZWJyYZRLAowHQmlvbG9neZRLAowHUGh5c2ljc5RLAowIUGh5c2ljYWyUSwKMCFNlbGVj
+dGVklEsBdYwFbWV0YXOUfZQojAdTdHVkZW50lEsDjAdDbHVzdGVylEsBdXViaBIpgZR9lChoFX2U
+KIwJYXR0cmlidXRllGgsS2WGlIwJZ3JvdXBfdmFylE5K/v///4aUjAlzZWxlY3Rpb26UKUr+////
+hpRoDUsBdWgffZQoaCFLAmgiSwJoI0sCaCRLAmglSwJoJksCaCdLAnVoKX2UKGgrSwNoLEsBdXVi
+ZXUu
+</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
