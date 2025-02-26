@@ -17,6 +17,7 @@ print(sms_raw['type'].value_counts()/len(sms_raw['type']))
 # Python 自然語言處理工具集(Natural Language ToolKit)
 import nltk # !conda install nltk --y
 # 串列推導完成分詞(nltk.download('punkt') at the first time)(list/tuple/dict comprehension, Python很特別的單行迴圈語法)
+
 token_list0 = [nltk.word_tokenize(txt) for txt in
 sms_raw['text']] # A nested or embedded list
 print(token_list0[3][1:7])
